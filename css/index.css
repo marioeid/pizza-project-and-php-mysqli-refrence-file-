@@ -1,0 +1,214 @@
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px black; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:black; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:rgb(40,40,40); 
+}
+.cart_form{
+  
+}
+@media (min-width: 768px) {
+
+  .container{
+    width: 100% !important;
+  }
+
+}
+
+.text-blue{
+  color: blue;
+}
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+
+.bold-blue{
+  color: #08526D;
+}
+.cart_btn{
+
+}
+.cart_form{
+
+}
+.btn-warning{
+  background-color: orange !important;
+}
+.text-danger{
+  color: red !important;
+}
+.btn-primary
+{
+  background-color:blue !important;
+
+}
+.bg-primary{
+  background-color:blue !important;
+}
+.btn-danger{
+  background-color: red !important;
+}
+.mg-top {
+  margin-top: 15px;
+}
+.mg-bottom {
+  margin-bottom: 15px;
+}
+.center-it {
+  margin: 0 auto;
+}
+.bg-violet {
+  background-color: #6600cc;
+}
+.text-violet {
+  color: #6600cc;
+}
+.grey-text {
+  color:black !important;
+}
+.h {
+  height: 100%;
+}
+.pos-fix {
+  position: fixed;
+}
+/* st above nav */
+.above-nav {
+  color: white;
+}
+.above-nav .info {
+  margin: 15px 0;
+}
+@media (max-width: 576px) {
+  .above-nav .info:first-child {
+    margin-bottom: 0;
+  }
+}
+/* en above nav */
+
+/*st nav bar */
+.navbar {
+}
+.navbar-brand {
+  color: blueviolet !important;
+  text-transform: uppercase;
+  padding: 0 0;
+  font-weight: bold;
+  font-size: 25px;
+}
+.navbar .nav-item {
+  margin-left: 15px;
+}
+/*en nav bar */
+
+/* st add pizza form */
+.add_pizza_form .addpizza form input[type="text"] {
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  outline: 0;
+  height: 2.1rem;
+  font-size: 1rem;
+  box-shadow: none;
+  box-sizing: content-box;
+}
+/* en add pizza form */
+/*st madal and add pizza*/
+.addpizza form .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.addpizza form .btn {
+  margin-top: 15px;
+}
+
+/* en modal and add pizz */
+
+/* st show_pizzas */
+.show_pizzas {
+  background-color: #f0f5f7;
+}
+.show_pizzas .card {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.show_pizzas .card .card-body .list-group-item {
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+.show_pizzas .sidebar li {
+  font-size: 25px;
+  width: 100%;
+}
+/* en show_pizzas */
+/* trading services*/
+.trading-services {
+  background-color:white;
+}
+.trading-services .card {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: none;
+  background-color:blue ;
+  color: white;
+}
+/* trading services */
+
+/*st cart */
+.cart .card .card-title {
+  text-align: center;
+  color: #08526D;
+  font-size: 20px;
+  font-weight: bold;
+}
+/*en cart */ 
+
+/* st contact us */
+.contact_us{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  background-color:#F0F5F7;
+  padding: 30px;
+}
+.contact_us .contact-us-form{
+  background-color:#F0F5F7;
+  padding:10px;
+}
+.contact_us .header{
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color:black;
+}
+.contact_us .contact-us-form .form-control{
+  border-radius:1rem;
+
+}
+/* en contact us */

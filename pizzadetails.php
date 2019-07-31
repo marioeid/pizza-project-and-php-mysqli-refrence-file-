@@ -44,7 +44,7 @@ if (isset($_GET['id']))
 
 
 <?php
- include('templates/header.php');
+ include('templates/back/header.php');
 ?>
 <div class="pizza">
     <div class="container">
@@ -76,7 +76,7 @@ if (isset($_GET['id']))
     </div>
 </div>
 <?php
- include('templates/footer.php');
+ include('templates/back/footer.php');
 
 ?>
 

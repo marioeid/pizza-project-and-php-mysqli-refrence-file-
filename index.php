@@ -1,8 +1,7 @@
 <?php
-
-include("functions.php");
 /* start a new session or cookies */
 session_start();
+
 /* st connect to database */
 $conn=mysqli_connect('localhost','marioeid','01006007990','pizzarita');
 // check the connection
@@ -24,7 +23,15 @@ $errors=['email'=>'','title'=>'','ingredients'=>'','file'=>'','user_name'=>'','p
 
 if (isset($_GET['add']))
 {
-$_SESSION['pizza_id'.$_GET['add']]++;
+if (!isset($_SESSION['pizza_id'.$_GET['add']]))
+{
+    $_SESSION['pizza_id'.$_GET['add']]=1;
+
+}
+else {
+    $_SESSION['pizza_id'.$_GET['add']]++;
+
+}
 //echo $_SESSION['pizza_id'.$_GET['add']];
 }
 else if (isset($_GET['remove']))
@@ -43,6 +50,12 @@ else if (isset($_GET['delete']))
     
     $_SESSION['pizza_id'.$_GET['delete']]='0';
   //  echo  $_SESSION['pizza_id'.$_GET['delete']];
+}
+else if (isset($_GET['logout']))
+{
+ $cur=$_COOKIE['user_name'];
+ setcookie('user_name',$cur,time()-86400);
+ header('location:index.php');
 }
 else if (isset($_POST['submit_cart']))
 {
@@ -156,10 +169,18 @@ else if (isset($_POST['submit_signup']))
   {
     $errors['email']='An email is required <br>';
     
-  
+  }
+  else if (empty($_POST['password']))
+  {
+    $errors['password']='a password is required <br>';
+  }
+  else if (empty($_POST['user_name']))
+  {
+    $errors['user_name']='A user name is required <br>';
+
   }
   else {
-    $user_check_query = "SELECT * FROM registration WHERE user_name='$user_name' OR email='$email' LIMIT 1";
+    $user_check_query =   $user_check_query = "SELECT * FROM users WHERE user_name='$user_name' OR user_email='$email' LIMIT 1";
     $result = mysqli_query($conn, $user_check_query);
     $user = mysqli_fetch_assoc($result);
     if ($user)
@@ -174,15 +195,7 @@ else if (isset($_POST['submit_signup']))
       }
     }
   }
-  if (empty($_POST['password']))
-  {
-    $errors['password']='a password is required <br>';
-  }
-  if (empty($_POST['user_name']))
-  {
-    $errors['user_name']='A user name is required <br>';
-
-  }
+  
   if (!array_filter($errors))
   {
     
@@ -193,6 +206,7 @@ else if (isset($_POST['submit_signup']))
    $sql="INSERT INTO users(user_name,user_email,user_password) VALUES('$user_name','$email','$password')";
    if (mysqli_query($conn,$sql))
    {
+      setcookie('user_name',$user_name,time()+86400);
       header('location: index.php');
 
    }
@@ -220,10 +234,10 @@ else if (isset($_POST['submit_login']))
   $email_username=mysqli_real_escape_string($conn, $_POST['email_username']);  
   $password=mysqli_real_escape_string($conn, $_POST['password']);
   $sql="SELECT * FROM  users WHERE user_name='$email_username' AND user_password='$password'";
-  if (mysqli_query($conn,$sql))
+  $result=mysqli_query($conn,$sql);
+  if (mysqli_num_rows($result) == 1) 
   {
     setcookie('user_name',$email_username,time()+86400);
-
      header('location: index.php');
 
   }
@@ -241,12 +255,15 @@ function cart()
     $total=0;
     $cnt=0;
     $allcnt=0;
+    $pizzas_names=array();
+    $pizzas_prices=array();
+    $pizzas_quantities=array();
     foreach ($_SESSION as $name=>$value):
-     
+         
         if ($value>0&substr($name,0,8)=='pizza_id')
-     {
-         $allcnt++;
-         $cnt+=$value;
+        {
+        $allcnt++;
+        $cnt+=$value;
         $length=strlen($name);
         $length-=8;
         $id=substr($name, 8 , $length);  
@@ -256,6 +273,9 @@ function cart()
         $result=mysqli_query($conn,$sql);
         $in=mysqli_fetch_all($result,MYSQLI_ASSOC);
         $total+=($value*$in[0]['price']);
+        array_push($pizzas_names,$in[0]['title']);
+        array_push($pizzas_quantities,$value);
+        array_push($pizzas_prices,$in[0]['price']);
         mysqli_close($conn);
         ?>
             <tr>
@@ -284,6 +304,9 @@ function cart()
     
 
     endforeach;
+    $_SESSION['pizzas_names']=$pizzas_names;
+    $_SESSION['pizzas_prices']=$pizzas_prices;
+    $_SESSION['pizzas_quantities']=$pizzas_quantities;
     $_SESSION['total_price']=$total;
     $_SESSION['total_pizzas']=$cnt;
 }
@@ -323,7 +346,7 @@ mysqli_close($conn);
    }
 ?>
 <?php
- include('templates/header.php');
+ include('templates/back/header.php');
 ?>
 
 
@@ -591,8 +614,8 @@ mysqli_close($conn);
                     <form class="paypal row"  action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
                         <input type='hidden' name='business' value='marioeid0106007990@gmail.com'>
                         <input type='hidden' name='currency_code' value='USD'>
-                        <input type="hidden" name="return" value="http://demo.itsolutionstuff.com/paypal/success.php">  
-						<input type="hidden" name="cancel_return" value="http://demo.itsolutionstuff.com/paypal/cancel.php">
+                        <input type="hidden" name="return" value="http://localhost/tuts/thank_you.php">  
+						<input type="hidden" name="cancel_return" value="http://localhost/tuts/thank_you2.php">
                         <input type="hidden" name="cmd" value="_cart">
 
                          <input type="hidden" name="upload" value="1">
@@ -680,7 +703,7 @@ mysqli_close($conn);
                             
                             <div class="card-body">
 
-                                <h4 class="card-title text-uppercase text-danger">
+                                <h4 class="card-title text-danger">
                                     <?php echo htmlspecialchars($pizza['title']); ?>
                                 </h4>
                                 <h4 class="text-uppercase text-weight-bold"> <?php echo htmlspecialchars($pizza['price']); ?>$</h4>
@@ -809,7 +832,7 @@ mysqli_close($conn);
  </div>
  </div>
 <?php
- include('templates/footer.php');
+ include('templates/back/footer.php');
 
 ?>
 

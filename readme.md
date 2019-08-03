@@ -9,23 +9,31 @@
 * **php**
 * **mysql**
 
-# the web site is my original design so there's no template link 
-## the web site Full Page Screen Capture extension
-![screencapture-localhost-tuts-index-php-2019-07-10-15_56_56](https://user-images.githubusercontent.com/24479105/60976292-b65e4d00-a32d-11e9-8567-6049b49a8bcd.png)
-  
-  
+# the web site is my original design so there's no template link(the web site still in progress as the admin page not yet finished)
     
 ## the web site back end feauters screen shots
 
-## first screen
-![Capture_4](https://user-images.githubusercontent.com/24479105/60819090-3b672c00-a19f-11e9-8a29-a8a5f4e93e8c.PNG)
-## second screen
-![Capture_5](https://user-images.githubusercontent.com/24479105/60819092-3bffc280-a19f-11e9-8fc0-7aa456819602.PNG)
-## third screen
-![Capture_6](https://user-images.githubusercontent.com/24479105/60819093-3bffc280-a19f-11e9-9cab-85d33549e0a4.PNG)
-## fourth screen
-![Capture_7](https://user-images.githubusercontent.com/24479105/60819095-3c985900-a19f-11e9-81df-d6632bd9ebfd.PNG)
-## fifth screen (when clicking read more button)
-![Capture_8](https://user-images.githubusercontent.com/24479105/60819096-3c985900-a19f-11e9-9201-0f311b31e21b.PNG)
+# when no one is logged in 
+![screencapture-localhost-tuts-index-php-2019-08-03-12_42_41](https://user-images.githubusercontent.com/24479105/62410977-c9db9b80-b5ed-11e9-86f6-78221e4f6f5c.png)
 
+# when the admin is logged in  
+![screencapture-localhost-tuts-index-php-2019-08-03-12_43_23](https://user-images.githubusercontent.com/24479105/62410978-ca743200-b5ed-11e9-948e-5ff8d02ddd9b.png)
 
+# when the user is logged in 
+![screencapture-localhost-tuts-index-php-2019-08-03-12_43_53](https://user-images.githubusercontent.com/24479105/62410979-ca743200-b5ed-11e9-86fb-9cfada654fa2.png)
+
+# dashboard page only accessible when the admin is logged in 
+![screencapture-localhost-tuts-index2-php-2019-08-03-12_47_53](https://user-images.githubusercontent.com/24479105/62410980-ca743200-b5ed-11e9-914b-3581c40248da.png)
+
+# orders page only accessible when the admin is logged in 
+![screencapture-localhost-tuts-index2-php-2019-08-03-12_48_15](https://user-images.githubusercontent.com/24479105/62410981-cb0cc880-b5ed-11e9-934c-83c432b2a1f7.png)
+
+# pizzas page only accessible when the admin is logged in 
+![screencapture-localhost-tuts-index2-php-2019-08-03-12_48_35](https://user-images.githubusercontent.com/24479105/62410982-cb0cc880-b5ed-11e9-977e-c3fc706170ba.png)
+
+# forms design screen shots 
+
+![Capture2](https://user-images.githubusercontent.com/24479105/62410997-ee377800-b5ed-11e9-858b-782442341eb8.PNG)
+![Capture3](https://user-images.githubusercontent.com/24479105/62410998-eed00e80-b5ed-11e9-8f7a-4d074af58f08.PNG)
+![Capture4](https://user-images.githubusercontent.com/24479105/62410999-eed00e80-b5ed-11e9-9e0f-2d1b2e0350e5.PNG)
+![Capture](https://user-images.githubusercontent.com/24479105/62411000-ef68a500-b5ed-11e9-9979-c07578284ad5.PNG)

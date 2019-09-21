@@ -23,13 +23,20 @@
 ![screencapture-localhost-tuts-index-php-2019-08-03-12_43_53](https://user-images.githubusercontent.com/24479105/62410979-ca743200-b5ed-11e9-86fb-9cfada654fa2.png)
 
 # dashboard page only accessible when the admin is logged in 
-![screencapture-localhost-tuts-index2-php-2019-08-03-12_47_53](https://user-images.githubusercontent.com/24479105/62410980-ca743200-b5ed-11e9-914b-3581c40248da.png)
+![screencapture-localhost-tuts-index2-php-2019-09-21-21_10_57](https://user-images.githubusercontent.com/24479105/65378146-0144fb00-dcb5-11e9-8de3-63d241687c30.png)
 
 # orders page only accessible when the admin is logged in 
-![screencapture-localhost-tuts-index2-php-2019-08-03-12_48_15](https://user-images.githubusercontent.com/24479105/62410981-cb0cc880-b5ed-11e9-934c-83c432b2a1f7.png)
+![screencapture-localhost-tuts-index2-php-2019-09-21-21_11_06](https://user-images.githubusercontent.com/24479105/65378151-10c44400-dcb5-11e9-9058-f07361051076.png)
+
 
 # pizzas page only accessible when the admin is logged in 
-![screencapture-localhost-tuts-index2-php-2019-08-03-12_48_35](https://user-images.githubusercontent.com/24479105/62410982-cb0cc880-b5ed-11e9-977e-c3fc706170ba.png)
+![screencapture-localhost-tuts-index2-php-2019-09-21-21_11_12](https://user-images.githubusercontent.com/24479105/65378157-20438d00-dcb5-11e9-988e-220080c1f86d.png)
+
+# add pizza page only accessible when the admin is logged in 
+![screencapture-localhost-tuts-index2-php-2019-09-21-21_11_17](https://user-images.githubusercontent.com/24479105/65378171-4b2de100-dcb5-11e9-88b1-759c4ee21252.png)
+
+# users page only accessible when the admin is logged in 
+![screencapture-localhost-tuts-index2-php-2019-09-21-21_11_22](https://user-images.githubusercontent.com/24479105/65378174-57b23980-dcb5-11e9-93d3-a59fba743830.png)
 
 # forms design screen shots 
 

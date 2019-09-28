@@ -9,7 +9,7 @@
 * **php**
 * **mysql**
 
-# the web site is my original design so there's no template link(the web site still in progress as the admin page not yet finished)
+# the web site is my original design so there's no template link the website is finally finished
     
 ## the web site back end feauters screen shots
 
